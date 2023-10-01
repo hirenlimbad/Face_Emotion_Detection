@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Face Detection and Emotion Recognition</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            margin-top: 10%;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .image {
+            max-width: 50%;
+            height: auto;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .heart {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h1>Vision Beyond</h1>
+            <p>Vision beyond is a computer vision project that aims to develop an application that can find 7 types of
+                sentiment based on faces. It detects faces automatically and finds the sentiment, and it is able to find
+                multiple faces at a time with their emotions.
+                <br> <br>
+
+            <p class="text-info"> Angry, Disgust, Fear, Happy, Neutral, Sad, Surprise </p>
+
+            </p>
+        </div>
+        <div class="image">
+            <img id="videoFeed" src="{{ url_for('video_feed') }}" alt="something went wrong." class="rounded">
+            <button class="btn btn-danger mt-2" id="startCapture">Camera off</button>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="content">
+            <h1>Upload an Image</h1>
+            <p>After uploading image you'll be able to see emotions of multiple people are in image. this will helps you
+                in image annotation, some time it detects unwanteted faces you can easily by seeing documentation.</p>
+        </div>
+
+        <div class="image_upload">
+            <form action="/upload" method="POST" enctype="multipart/form-data" class="btn btn-dark">
+                <input type="file" name="file" accept=".jpg, .jpeg, .png" required class="">
+                <input type="submit" value="Upload" class="btn btn-primary ">
+            </form>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <h1>Upload a Video</h1>
+            <p>After uploading video you'll be able to see emotions of multiple people are in video. you can change some
+                code and get overall sentiment of video by seeing face. this will automate your hours of work.</p>
+        </div>
+
+        <div class="image_upload">
+            <form action="/upload_video" method="POST" enctype="multipart/form-data" class="btn btn-dark">
+                <input type="file" name="video" accept=".mp4, .avi, .mov" required class="">
+                <input type="submit" value="Upload" class="btn btn-primary ">
+            </form>
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        <br><br><br>
+        <span class="heart">❤️</span>
+        <p>Made with love | <a href="https://github.com/hirenlimbad" target="_blank">GitHub/hirenLimbad</a></p>
+        <br><br><br>
+    </div>
+
+
+
+
+    <!-- scripts -->
+    <script>
+        const videoFeed = document.getElementById('videoFeed');
+        const startCaptureButton = document.getElementById('startCapture');
+        let capturing = true;
+
+        startCaptureButton.addEventListener('click', function () {
+            if (capturing) {
+                videoFeed.style.visibility = 'hidden';
+                startCaptureButton.textContent = 'Camera On';
+                videoFeed.src = 'Dummy.avif'; // Clear the src attribute to stop the video feed
+
+            } else {
+                videoFeed.style.visibility = 'visible';
+                videoFeed.src = "{{ url_for('video_feed') }}"; // Set the src to start the video feed
+                startCaptureButton.textContent = 'Camera Off';
+            }
+            capturing = !capturing;
+        });
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+</body>
+
+</html>
