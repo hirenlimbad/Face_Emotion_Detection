@@ -38,7 +38,8 @@ install dependencies using the provided `requirements.txt` file.
    python3 app.py
    ```
 ## Contributing
-We welcome contributions from the community to enhance and improve our Emotion Detection project.
+welcome contributions from the community to enhance and improve our Emotion Detection project.
 
 ## Connect 
+connect me on Twitter https://twitter.com/hirenlimbad8
 Happpy coding
