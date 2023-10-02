@@ -2,6 +2,8 @@
 
 Welcome to the Emotion Detection project! My mission is to create a robust machine learning model capable of detecting emotions from facial expressions. I understand the significance of emotion recognition in various applications, from human-computer interaction to mental health monitoring, and I'm excited to contribute to this important field.
 
+<img src="Happy face.jpeg" alt="Example Image" height=50%>
+
 ## Project Goals
 My project aims to achieve the following objectives:
 
