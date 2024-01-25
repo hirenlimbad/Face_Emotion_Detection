@@ -21,7 +21,7 @@ I believe that the foundation of any successful project is a well-structured and
 - **Scalability**: My project is designed to accommodate future enhancements and scaling, allowing for the integration of new features and improvements seamlessly.
 
 ## Data Collection
-My Emotion Detection project relies on a diverse and well-labeled dataset of facial images to train and evaluate the model. I used the [FER dataset](https://www.kaggle.com/datasets/ashishpatel26/facial-expression-recognitionferchallenge) for this purpose. It contains a wide range of facial expressions that cover seven primary emotions - happiness, sadness, anger, surprise, fear, disgust, and neutrality.
+My Emotion Detection project relies on a diverse and well-labeled dataset of facial images to train and evaluate the model. I used the [FER dataset](https://www.kaggle.com/datasets/jonathanoheix/face-expression-recognition-dataset/data) for this purpose. It contains a wide range of facial expressions that cover seven primary emotions - happiness, sadness, anger, surprise, fear, disgust, and neutrality.
 
 ## Model Architecture
 I've chosen a Convolutional Neural Network (CNN) for this task due to its excellent performance in image recognition tasks. My model architecture consists of multiple convolutional layers, which enable the model to learn and represent complex features from facial images. I utilized the Keras library to implement and train the model.
